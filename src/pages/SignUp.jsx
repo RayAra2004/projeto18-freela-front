@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SCFormSignUp, SCSignUp } from "../styles/SignUp.style";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function SignUp(){
 
@@ -53,6 +53,9 @@ export default function SignUp(){
                 />
                 <button>Cadastrar-se</button>
             </SCFormSignUp>
+            <Link to={"/login"}>
+                <p>Já possui cadastro? Entre agora!</p>
+            </Link>
         </SCSignUp>
     )
 }
