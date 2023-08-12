@@ -1,0 +1,1 @@
+export const BACKGROUND_PAGE = "#1F1122";
