@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Menu from "../components/Menu";
-import { SCBtn, SCMyServices } from "../styles/MyServices.style";
+import { NoService, SCBtn, SCMyServices } from "../styles/MyServices.style";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -37,6 +37,19 @@ export default function MyServices(){
                 .catch(err => console.log(err))
     }
 
+    if(myServices === undefined)return <>Carregando...</>
+    if(myServices.length === 0) return(
+        <SCMyServices>
+            <Header/>
+            <div className="body">
+                <Menu/>
+                <NoService>
+                    <p>Você não poussui serviços!!</p>
+                </NoService>
+            </div>
+        </SCMyServices>
+    )
+     
     return(
         <SCMyServices>
             <Header/>

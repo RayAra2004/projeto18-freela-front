@@ -55,4 +55,15 @@ export const SCService = styled.div`
         margin-top: 20px;
         width: 800px;
     }
+
+    .user_info{
+        margin-left: 10px;
+        text-align: justify;
+        width: 100%;
+
+        p, span{
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+    }
 `

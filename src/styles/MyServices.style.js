@@ -74,3 +74,16 @@ export const SCMyServices = styled.div`
 export const SCBtn = styled.button`
     background-color: ${props => props.a ? 'red' : 'green'};
 `
+
+export const NoService = styled.div`
+    display: flex;
+    width: 90%;
+    margin-left: 40px;
+    justify-content: center;
+    align-items: center;
+
+    p{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 40px;
+    }
+`

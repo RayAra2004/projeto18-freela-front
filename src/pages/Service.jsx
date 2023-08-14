@@ -26,7 +26,11 @@ export default function Service(){
                     <div className="price">
                         <span>Total</span>
                         <p>R$ {String(service.price.toFixed(2)).replace('.', ',')}</p>
-                        <button>Contratar</button>
+                        <div className="user_info">
+                            <p>Vendedor: {service.user[0].name}</p>
+                            <span>Email: {service.user[0].email}</span><br></br><br></br>
+                            <span>Telefone: {service.user[0].phone}</span>
+                        </div>
                     </div> 
                 </div>
                 

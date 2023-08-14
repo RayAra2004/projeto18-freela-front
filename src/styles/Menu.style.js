@@ -26,4 +26,8 @@ export const SCMenu = styled.div`
         text-decoration: none;
         color: black;
     }
+
+    .logout{
+        cursor: pointer;
+    }
 `

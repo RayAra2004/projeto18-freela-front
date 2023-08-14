@@ -2,6 +2,7 @@ import { useState } from "react";
 import { SCFormSignUp, SCSignUp } from "../styles/SignUp.style";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import Header from "../components/Header";
 
 export default function SignUp(){
 
@@ -45,6 +46,7 @@ export default function SignUp(){
 
     return(
         <SCSignUp>
+            <Header/>
             <SCFormSignUp onSubmit={e => register(e)}>
                 <div className="user">
                     <label htmlFor="name">Nome:</label>

@@ -3,6 +3,7 @@ import { SCFormSignIn, SCSignIn } from "../styles/SignIn.style";
 import { useContext, useState } from "react";
 import axios from "axios";
 import TokenContext from "../contexts/Token_User";
+import Header from "../components/Header";
 
 export default function SignIn(){
 
@@ -26,6 +27,7 @@ export default function SignIn(){
 
     return(
         <SCSignIn>
+            <Header/>
             <SCFormSignIn onSubmit={ e => login(e)}>
                 <label htmlFor="email">Email:</label>
                 <input id="email" name="email" type="email" placeholder="Digite seu email"

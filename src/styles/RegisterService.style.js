@@ -72,6 +72,23 @@ export const SCFormRegister = styled.form`
             color: white;
             font-size: 25px;
             font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+        }
+    }
+
+    .category{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        ion-icon{
+            font-size:25px;
+            margin-left: 3px;
+            margin-top: -15px;
+            cursor: pointer;
+        }
+
+        select{
+            margin-bottom: 10px;
         }
     }
 `
