@@ -1,19 +1,26 @@
 import { Link, useNavigate } from "react-router-dom";
 import { SCFormSignIn, SCSignIn } from "../styles/SignIn.style";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
+import TokenContext from "../contexts/Token_User";
 
 export default function SignIn(){
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+    const {setToken} = useContext(TokenContext);
 
     function login(e){
         e.preventDefault();
 
         axios.post(`${import.meta.env.VITE_API_URL}/signIn`, { email, password})
-            .then(res => navigate("/"))
+            .then(res => {
+                
+                navigate("/");
+                setToken(res.data.token);
+                localStorage.setItem('token', res.data.token)
+            })
             .catch(err => alert(err.message))
     }
 
