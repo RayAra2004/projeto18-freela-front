@@ -60,6 +60,10 @@ const ResetStyle = createGlobalStyle`
 	strong{
 		font-weight: bold;
 	}
+
+	*{
+		box-sizing: border-box;
+	}
 `
 
 export default ResetStyle

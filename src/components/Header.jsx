@@ -19,10 +19,11 @@ export default function Header(){
                     <span>Filtrar</span>
                 </div>
             </div>
-            <div>
-                <p>Minha Conta</p>
-            </div>
-
+            <Link to={"/minha-conta"}>
+                <div className="my-account">
+                    <p>Minha Conta</p>
+                </div>
+            </Link>
         </SCHeader>
     );
 }

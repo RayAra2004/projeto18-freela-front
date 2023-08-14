@@ -15,7 +15,10 @@ export default function SignUp(){
     function register(e){
         e.preventDefault();
 
-        if(password !== confirmPassword) alert("As senhas devem ser iguais!!")
+        if(password !== confirmPassword){
+            alert("As senhas devem ser iguais!!");
+            return;
+        } 
 
         axios.post(`${import.meta.env.VITE_API_URL}/signUp`, {name, email, password, tp_user})
             .then(res => {
@@ -33,7 +36,7 @@ export default function SignUp(){
                 <label htmlFor="name">Nome:</label>
                 {/*TODO: Verificar regex */}
                 <input placeholder="Digite seu nome" id="name" name="name" 
-                    pattern="([^\u0000-\u0040\u005B-\u0060\u007B-\u00BF\u02B0-\u036F\u00D7\u00F7\u2000-\u2BFF])+"
+                    //pattern="([A-z])"
                     value={name} onChange={ e => setName(e.target.value)}
                 />
                 <label htmlFor="email">Email:</label>

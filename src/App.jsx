@@ -6,6 +6,8 @@ import Service from "./pages/Service"
 import { useState } from "react"
 import TokenContext from "./contexts/Token_User"
 import RegisterService from "./pages/RegisterService"
+import MyAccount from "./pages/MyAccount"
+import MyServices from "./pages/MyServices"
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
           <Route path="/login" element={<SignIn/>}/>
           <Route path="/services/:id" element={<Service/>}/>
           <Route path="/services/cadastro" element={<RegisterService/>}/>
+          <Route path="/minha-conta" element={<MyAccount/>}/>
+          <Route path="/meus-servicos" element={<MyServices/>}/>
         </Routes>
       </BrowserRouter>
     </TokenContext.Provider>

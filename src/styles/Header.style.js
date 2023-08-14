@@ -8,7 +8,7 @@ export const SCHeader = styled.div`
     height: 100px;
     margin-bottom: 100px;
     display: flex;
-    justify-content: space-between;
+    //justify-content: space-between;
     align-items: center;
     width: 100%;
     background-color: ${BACKGROUND_PAGE};
@@ -34,6 +34,7 @@ export const SCHeader = styled.div`
         display: flex;
         align-items: center;
         margin-right: 20%;
+        margin-left: 10%;
     }
 
     input{
@@ -58,5 +59,12 @@ export const SCHeader = styled.div`
     ion-icon{
         font-size: 30px;
         color: white;
+    }
+
+    .my-account{
+        margin-right: 20px;
+        p{
+            color: white;
+        }
     }
 `
