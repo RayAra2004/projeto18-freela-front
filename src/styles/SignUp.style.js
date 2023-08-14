@@ -14,12 +14,23 @@ export const SCSignUp = styled.div`
     a{
         text-decoration: none;
     }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number]{
+        -moz-appearance: textfield;
+    }
 `
 
 export const SCFormSignUp = styled.form`
     display: flex;
-    flex-direction: column;
     align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
     input{
         width: 300px;
         height: 30px;
@@ -35,5 +46,28 @@ export const SCFormSignUp = styled.form`
         background-color: #5B5B5B;
         color: #FFFFFF;
         font-weight: bold;
+    }
+
+    .user{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .address{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 30px;
+
+        select{
+            width: 300px;
+            height: 30px;
+            margin-top: 10px;
+        }
+    }
+
+    .confirm{
+        margin-left: 20px;
     }
 `

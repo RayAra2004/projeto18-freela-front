@@ -16,16 +16,6 @@ export default function RegisterService(){
     const [category, setCategory] = useState();
     const [selectedCategory, setSelectedCategory] = useState([]);
     
-    const [cep, setCep] = useState('');
-    const [city, setCity] = useState('');
-    const [neighborhood, setNeighborhood] = useState('');
-    const [state, setState] = useState('Selecione seu Estado');
-    const [street, setStreet] = useState('');
-    const [number, setNumber] = useState('');
-    
-    
-
-    
     useEffect(() => {
         if(localStorage.getItem('token') === null){
             if(token === null){
@@ -46,17 +36,6 @@ export default function RegisterService(){
         headers: {
             "Authorization": `Bearer ${token}`
         }
-    }
-
-    function searchCEP(value) {
-        fetch(`https://brasilapi.com.br/api/cep/v2/${value}`)
-            .then(res => res.json())
-            .then(dados => {
-                setCity(dados.city);
-                setNeighborhood(dados.neighborhood);
-                setState(dados.state);
-                setStreet(dados.street);
-            });
     }
 
     function createService(e){
@@ -102,65 +81,6 @@ export default function RegisterService(){
                     <input name="url" placeholder="https://example.com" type="url" value={photos[4]} onChange={e => setPhotos([...photos, e.target.value])}/>
                     <button>CADASTRAR</button>
                 </div>
-                {/*
-                <div className="address">
-
-                    <div>
-                        <label htmlFor="street">Logradouro</label>
-                        <input id="street" name="street" placeholder={"Logradouro"} value={street} onChange={e => setStreet(e.target.value)} required />
-                    </div>
-                    <div>
-                        <label htmlFor="number">Número</label>
-                        <input id="number" name="number" type="number" placeholder={"Número"} value={number} onChange={e => setNumber(e.target.value)} required />
-                    </div>
-                    <div>
-                        <label htmlFor="city">Cidade</label>
-                        <input id="city" name="city" placeholder={"Cidade"} value={city} onChange={e => setCity(e.target.value)} required />
-                    </div>
-                    <div>
-                        <label htmlFor="neighborhood">Bairro</label>
-                        <input id="neighborhood" name="neighborhood" placeholder={"Bairro"} value={neighborhood} onChange={e => setNeighborhood(e.target.value)} required />
-                    </div>
-                    <div>
-                        <label htmlFor="cep">CEP</label>
-                        <input id="cep" name="cep" type="number" placeholder={"CEP"} value={cep} onChange={e => { searchCEP(e.target.value); setCep(e.target.value) }} required />
-                    </div>
-                    <div>
-                        <label htmlFor="uf">Estado</label>
-                        <select id="uf" name="uf" value={state} onChange={e => setState(e.target.value)}>
-                            <option value="Selecione seu Estado"></option>
-                            <option value="AC">Acre</option>
-                            <option value="AL">Alagoas</option>
-                            <option value="AP">Amapá</option>
-                            <option value="AM">Amazonas</option>
-                            <option value="BA">Bahia</option>
-                            <option value="CE">Ceará</option>
-                            <option value="DF">Distrito Federal</option>
-                            <option value="ES">Espírito Santo</option>
-                            <option value="GO">Goiás</option>
-                            <option value="MA">Maranhão</option>
-                            <option value="MT">Mato Grosso</option>
-                            <option value="MS">Mato Grosso do Sul</option>
-                            <option value="MG">Minas Gerais</option>
-                            <option value="PA">Pará</option>
-                            <option value="PB">Paraíba</option>
-                            <option value="PR">Paraná</option>
-                            <option value="PE">Pernambuco</option>
-                            <option value="PI">Piauí</option>
-                            <option value="RJ">Rio de Janeiro</option>
-                            <option value="RN">Rio Grande do Norte</option>
-                            <option value="RS">Rio Grande do Sul</option>
-                            <option value="RO">Rondônia</option>
-                            <option value="RR">Roraima</option>
-                            <option value="SC">Santa Catarina</option>
-                            <option value="SP">São Paulo</option>
-                            <option value="SE">Sergipe</option>
-                            <option value="TO">Tocantins</option>
-                        </select>
-                    </div>
-                    
-                </div>
-                */}
             </SCFormRegister>
         </SCRegisterService>
     )
