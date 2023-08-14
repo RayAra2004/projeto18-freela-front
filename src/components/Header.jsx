@@ -1,13 +1,16 @@
+import { Link } from "react-router-dom";
 import { SCHeader } from "../styles/Header.style";
 import logo from "./../assets/logo.jpeg";
 
 export default function Header(){
     return(
         <SCHeader>
-            <div className="logo">
-                <img src={logo}/>
-                <p>HUB SERVICES</p>
-            </div>
+            <Link to={"/"}>
+                <div className="logo">
+                    <img src={logo}/>
+                    <p>HUB SERVICES</p>
+                </div>
+            </Link>
             <div>
                 <input placeholder="Pesquisar..."/>
                 <ion-icon name="search-outline"></ion-icon>

@@ -13,6 +13,9 @@ export const SCHeader = styled.div`
     width: 100%;
     background-color: ${BACKGROUND_PAGE};
     font-family: 'Montserrat', sans-serif;
+    a{
+        text-decoration: none;
+    }
     .logo{
         display: flex;
         align-items: center;
